@@ -20,14 +20,13 @@ function requestWeatherData(){
     if(Cookies.get("weatherRequested") == undefined){
         let key = '96971bf6cd0e149c9760bcc58c32bf9c';
         let bbox = '-6.262829,106.592597,-6.213887,106.667352';
-        let address = 'api.openweathermap.org/data/2.5/box/city?bbox='
-        +bbox+'&APPID='+key;
+        let address = 'https://api.openweathermap.org/data/2.5/box/city?bbox='
+        +bbox+'&appid='+key;
 
         let trycount = 0; 
         let maxtry = 3;
 
-        let request = $.ajax({type: "GET", url: address, processData: false, 
-        dataType: "json", contentType: "application/json"}).
+        let request = $.ajax({method: "GET", url: address, dataType: "json"}).
         done((response)=>{
             weatherDatabase = JSON.parse(response);
             console.log(weatherDatabase);
