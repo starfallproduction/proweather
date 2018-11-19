@@ -1,0 +1,63 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>ProWeather | Homepage</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/main.css" type="text/css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js" integrity="sha256-cy35RxCREfCgW7nc5h5HlCw5eEF4JKc9O+mb9BN07kY=" crossorigin="anonymous"></script>
+
+  <script src="js/index.js" type="application/javascript"></script>
+</head>
+
+<body class="indexBody" onload="OnLoad();">
+  <!-- This is first page including main brand and information -->
+  <div class="col-sm-12 section">
+      <img src="img/MainBrand.png">
+  </div>
+  
+  <!-- This is second page including login form -->
+  <div class="col-sm-12 section">
+    <form class="col-sm-6 loginSection">
+      <h1>Login</h1>
+      <div class="form-group">
+        <label for="username">
+          <h2>Username</h2>
+        </label>
+        <input name="username" type="text" class="form-control" id="username"/>
+      </div>
+
+      <div class="form-group">
+        <label for="password">
+          <h2>Password</h2>
+        </label>
+        <input name="password" type="password" class="form-control" id="password"/>
+      </div>
+
+      <div class="form-group submitContainer">
+        <input type="submit" value="submit" class="form-control form-control-lg" id="submit"/>  
+      </div>
+    </form>
+  </div>
+
+  <!-- This is footer section -->
+  <footer class="col-sm-12 footer">
+    <h3>ProWeather</h3>
+  </footer>
+</body>
+
+</html>
