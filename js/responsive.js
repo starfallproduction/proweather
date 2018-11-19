@@ -1,7 +1,7 @@
 // load all responsive action into trigger, button, etc in webpage
 function responsiveOnLoad(){
     // Set up data
-    $("#username").text(Cookies.get("username"));
+    $("[id=username]").text(Cookies.get("username"));
 
     // weather trigger
     $("#weatherTrigger").click(weatherTriggerAction);
@@ -14,7 +14,7 @@ function responsiveOnLoad(){
     // aboutme trigger
     $("#aboutmeTrigger").click(aboutmeTriggerAction);
     // logout trigger
-    $("#profileLogout").click(logoutTriggerAction);
+    $("[id=profileLogout]").click(logoutTriggerAction);
 }
 
 function onResize(){
@@ -85,6 +85,7 @@ function aboutmeTriggerAction(){
 function logoutTriggerAction(){
     // erase cookie session
     Cookies.remove("username");
+    store.remove("weatherDatabase");
 
     // Create link dynamically
     let link = document.createElement("a");
