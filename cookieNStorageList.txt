@@ -1,6 +1,5 @@
 This is list of all cookie variable created
 - username, path: entire site, expire: 1 day
-- weatherRequested, path: entire site, expire: 1 hour after creation
 
 This is list of all storage variable created
 - weatherDatabase. path: entire site, expire: persist after creation until overwrited
