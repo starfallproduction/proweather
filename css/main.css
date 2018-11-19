@@ -335,6 +335,15 @@ textarea {
     height: 175px;
 }
 
+.detailModalContent{
+    height: calc(100% - 24px);
+}
+
+.weatherImg{
+    object-fit: contain;
+    height: 100%;
+}
+
 /* About me section */
 .aboutmeSection{
     overflow: scroll;
