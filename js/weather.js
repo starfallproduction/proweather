@@ -136,7 +136,58 @@ function openDetailModal(weatherDetail){
     let temperatureMax = weatherDetail.main.temp_max;
     let moisture = weatherDetail.main.humidity;
     let windDeg = weatherDetail.wind.deg;
-    let windSpeed = weatherDetail.main.speed;
+    let windSpeed = weatherDetail.wind.speed;
+
+    let text;
+
+    // Manipule all data inside
+    $("#detailModalCityName").empty();
+    text = document.createElement("p");
+    $(text).addClass("text-center");
+    $(text).text(cityName);
+    $("#detailModalCityName").append(text);
+
+    $("#detailModalCoord").empty();
+    text = document.createElement("p");
+    $(text).addClass("text-center");
+    $(text).text(coord);
+    $("#detailModalCoord").append(text);
+
+    $("#detailModalTempMin").empty();
+    text = document.createElement("p");
+    $(text).addClass("text-center");
+    $(text).text("Min : "+temperatureMin+" celcius");
+    $("#detailModalTempMin").append(text);
+
+    $("#detailModalTemp").empty();
+    text = document.createElement("p");
+    $(text).addClass("text-center");
+    $(text).text("Current : "+temperature+" celcius");
+    $("#detailModalTemp").append(text);
+
+    $("#detailModalTempMax").empty();
+    text = document.createElement("p");
+    $(text).addClass("text-center");
+    $(text).text("Max : "+temperatureMax+" celcius");
+    $("#detailModalTempMax").append(text);
+
+    $("#detailModalMoist").empty();
+    text = document.createElement("p");
+    $(text).addClass("text-center");
+    $(text).text(moisture);
+    $("#detailModalMoist").append(text);
+
+    $("#detailModalWind").empty();
+    text = document.createElement("p");
+    $(text).addClass("text-center");
+    $(text).text("Speed : "+windSpeed);
+    $("#detailModalWind").append(text);
+
+    $("#detailModalWindDeg").empty();
+    text = document.createElement("p");
+    $(text).addClass("text-center");
+    $(text).text("Degree : "+windDeg);
+    $("#detailModalWindDeg").append(text);
 
     // show modal
     $("#detailModal").modal("show");
