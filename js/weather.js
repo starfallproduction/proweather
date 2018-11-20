@@ -15,8 +15,6 @@ function weatherOnLoad(){
 
 // this is function to request weather data when page load or per interval
 function requestWeatherData(){
-    let weatherDatabase = store.get('weatherDatabase');
-
     // will be call if only already pas 1 hour after calling this function
     let key = '96971bf6cd0e149c9760bcc58c32bf9c';
     let bbox = '105.825024,-6.918643,107.208119,-6.181613,20';
@@ -28,9 +26,10 @@ function requestWeatherData(){
 
     let request = $.ajax({method: "GET", url: address, dataType: "json"}).
     done((response)=>{
-        weatherDatabase = response.list;
+        let weatherDatabase = response.list;
         console.log(weatherDatabase);
         store.set('weatherDatabase', weatherDatabase);
+        generateWeatherData(weatherDatabase);
     }).fail((xhr, status, err)=>{
         console.log("fail")
         console.log(status);
@@ -40,14 +39,13 @@ function requestWeatherData(){
             if(trycount < maxtry){
                 $.ajax(this);
                 return;
+            }else{
+                let weatherDatabase = store.get('weatherDatabase');
+                generateWeatherData(weatherDatabase);
             }
             return;
         }
     });
-
-    // generateWeatherData automatically
-    if(weatherDatabase != undefined)
-        generateWeatherData(weatherDatabase);
 }
 
 // generate database
