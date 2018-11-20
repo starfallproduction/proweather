@@ -7,9 +7,6 @@ let testData;
 function weatherOnLoad(){
     // generate weather table data
     setInterval(requestWeatherData(), 1000*15);
-
-    // attach event openDetailModal to every detailButton
-    $("[id=detailButton]").click(prepareDetailModal);
 }
 
 
@@ -107,6 +104,9 @@ function generateWeatherData(weatherDatabase){
         // add newRow into tableBody
         $("#tableBody").append(newRow);
     }
+
+    // attach event openDetailModal to every detailButton
+    $("[id=detailButton]").click(prepareDetailModal);
 }
 
 // this is function that detail button will have
