@@ -20,6 +20,24 @@
     text-shadow: none;
 }
 
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-track{
+    background: rgba(204, 204, 204, 0.479);
+}
+
+::-webkit-scrollbar-thumb{
+    background: rgba(228, 228, 228, 0.746);
+    border-radius: 11%;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: rgb(230, 230, 230);
+}
+
 /*
  * A better looking default horizontal rule
  */
@@ -252,7 +270,7 @@ textarea {
 .mainSection{
     position: relative;
     display: block;
-    background-color: rgb(18, 145, 107);
+    background-color: rgb(153, 204, 233);
     height: calc(100vh - 65px);
 }
 
@@ -317,7 +335,7 @@ textarea {
 
 /* dataSection style*/
 .dataSection{
-    overflow: scroll;
+    overflow: auto;
 }
 
 .center{
@@ -346,7 +364,7 @@ textarea {
 
 /* About me section */
 .aboutmeSection{
-    overflow: scroll;
+    overflow: auto;
 }
 
 .textTruncate{
@@ -409,7 +427,7 @@ textarea {
 
 @media only screen and (max-height: 575px){
     .sidebarProfile, .sidebarProfileSmall{
-        overflow: scroll;
+        overflow: auto;
     }
 
     .sidebarProfile > .w-100.h-auto{
@@ -422,7 +440,7 @@ textarea {
     }
 
     .loginSection{
-        overflow: scroll;
+        overflow: auto;
     }
 
     .submitContainer{
