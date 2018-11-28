@@ -24,15 +24,15 @@ function requestWeatherData(){
     let request = $.ajax({method: "GET", url: address, dataType: "json"}).
     done((response)=>{
         let weatherDatabase = response.list;
-        console.log(weatherDatabase);
+        //console.log(weatherDatabase);
         store.set('weatherDatabase', weatherDatabase);
         generateWeatherData(weatherDatabase);
     }).fail((xhr, status, err)=>{
         console.log("fail")
-        console.log(status);
+        //console.log(status);
         if(status == 'timeout'){
             trycount++;
-            console.log("try: " + trycount);
+            //console.log("try: " + trycount);
             if(trycount < maxtry){
                 $.ajax(this);
                 return;
@@ -53,7 +53,7 @@ function generateWeatherData(weatherDatabase){
     // create table body
     for(let i in weatherDatabase){
         let data = weatherDatabase[i];
-        console.log(data);
+        //console.log(data);
 
         // create new row
         let newRow = document.createElement("tr");
