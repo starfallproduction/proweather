@@ -106,26 +106,32 @@ function generateWeatherData(weatherDatabase){
     }
 
     // attach event openDetailModal to every detailButton
-    $("[id=detailButton]").click(prepareDetailModal);
+    $("[id=detailButton]").click(prepareDetail);
 }
 
 // this is function that detail button will have
-// prepare detail for modal when detailButton clicked
-function prepareDetailModal(event){
+// prepare detail and open it in another page
+function prepareDetail(event){
     let cityName = $(event.target).attr("name");
     let weatherDatabase = store.get("weatherDatabase");
     
     for(let i in weatherDatabase){
         if(weatherDatabase[i].name == cityName){
-            openDetailModal(weatherDatabase[i]);
+            store.set("weatherDetail", weatherDatabase[i]);
+            let link = document.createElement("a");
+            link.href = "detail.html";
+            $("body").append(link);
+            link.click();
+            link.parentNode.removeChild(link);
             break;
         }
     }
 }
 
-// open detailModal with detail in that button row
-function openDetailModal(weatherDetail){
-    console.log("Show Detail");
+// load weatherDetail in another page
+function writeDetail(){
+    let weatherDetail = store.get("weatherDetail");
+
     // get all detail data
     let cityName = weatherDetail.name;
     let coord = weatherDetail.coord.Lat + ", " + weatherDetail.coord.Lon;
@@ -136,62 +142,12 @@ function openDetailModal(weatherDetail){
     let windDeg = weatherDetail.wind.deg;
     let windSpeed = weatherDetail.wind.speed;
 
-    let text;
-
-    // Manipule all data inside
-    $("#detailModalCityName").empty();
-    text = document.createElement("p");
-    $(text).addClass("text-center");
-    $(text).text(cityName);
-    $("#detailModalCityName").append(text);
-
-    $("#detailModalCoord").empty();
-    text = document.createElement("p");
-    $(text).addClass("text-center");
-    $(text).text(coord);
-    $("#detailModalCoord").append(text);
-
-    $("#detailModalTempMin").empty();
-    text = document.createElement("p");
-    $(text).addClass("text-center");
-    $(text).text("Min : "+temperatureMin+" celcius");
-    $("#detailModalTempMin").append(text);
-
-    $("#detailModalTemp").empty();
-    text = document.createElement("p");
-    $(text).addClass("text-center");
-    $(text).text("Current : "+temperature+" celcius");
-    $("#detailModalTemp").append(text);
-
-    $("#detailModalTempMax").empty();
-    text = document.createElement("p");
-    $(text).addClass("text-center");
-    $(text).text("Max : "+temperatureMax+" celcius");
-    $("#detailModalTempMax").append(text);
-
-    $("#detailModalMoist").empty();
-    text = document.createElement("p");
-    $(text).addClass("text-center");
-    $(text).text(moisture);
-    $("#detailModalMoist").append(text);
-
-    $("#detailModalWind").empty();
-    text = document.createElement("p");
-    $(text).addClass("text-center");
-    $(text).text("Speed : "+windSpeed);
-    $("#detailModalWind").append(text);
-
-    $("#detailModalWindDeg").empty();
-    text = document.createElement("p");
-    $(text).addClass("text-center");
-    $(text).text("Degree : "+windDeg);
-    $("#detailModalWindDeg").append(text);
-
-    // show modal
-    $("#detailModal").modal("show");
-}
-
-// this is function that generate data by city name
-function searchBy(anything){
-
+    $("#cityName").text("City Name: " + cityName);
+    $("#coord").text("Coordinate: " + coord);
+    $("#temp").text("Temperature(Celcius): " + temperature);
+    $("#tempMin").text("Mininal Temperature(Celcius): " + temperatureMin);
+    $("#tempMax").text("Maximal Temperature(Celcius): " + temperatureMax);
+    $("#moisture").text("Moisture: " + moisture);
+    $("#windDeg").text("Wind Degree: " + windDeg);
+    $("#windSpeed").text("Wind Velocity: " + windSpeed);
 }

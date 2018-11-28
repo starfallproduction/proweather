@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>ProWeather | Weather</title>
+  <title>ProWeather | About Me</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -26,7 +26,7 @@
   <script src="js/responsive.js" type="application/javascript"></script>
 </head>
 
-<body onload="responsiveOnLoad(); weatherOnLoad();" onresize="onResize();">
+<body onload="responsiveOnLoad(); writeDetail();" onresize="onResize();">
     <!-- This is header section -->
     <header class="container-fluid header">
       <div class="row align-items-center h-100">
@@ -141,38 +141,44 @@
         
         <!-- This is main content -->
         <!-- Put any content in this section -->
-        <div class="dataSection col" id="mainContent">
-          
-          <!-- This is table for weather data list -->
-          <div class="mt-5 mx-0 row">
-            <div class="container-fluid table-responsive-sm p-0">
-              <table class="table">
-                <thead>
-                  <tr class="table-primary d-flex justify-content-start">
-                    <th class="flex-fill col-1 textTruncate" scope="col">#</th>
-                    <th class="flex-fill col" scope="col">Weather Condition</th>
-                    <th class="flex-fill col textTruncate" scope="col">Coordinate(latitude, longtitude)</th>
-                    <th class="flex-fill col-2 textTruncate" scope="col">Detail</th>
-                  </tr>
-                </thead>
-                <tbody id="tableBody">
-                  <!--<tr class="table-light d-flex justify-content-start">
-                    <th class="flex-fill col-1 textTruncate" scope="row">1</th>
-                    <td class="flex-fill col" >
-                      
-                    </td>
-                    <td class="flex-fill col textTruncate" ></td>
-                    <td class="flex-fill col-2 textTruncate" >
-                      <button type="button" id="detailButton" class="detailButton center" name="">
-                        Detail
-                      </button>
-                    </td>
-                  </tr>-->
-                </tbody>
-              </table>
-            </div>
+        <div class="aboutmeSection col">
+          <!-- This is element for data detail information -->
+          <!-- Title -->
+          <div class="row w-100 mt-5 mb-3">
+            <h1 class="p-x-5 center">Detail</h1>
           </div>
 
+          <div class="row text-center w-100 my-2">
+            <h5 class="text-center w-100" id="cityName"></h5>
+          </div>
+
+          <div class="row text-center w-100 my-2">
+            <h5 class="text-center w-100" id="coord"></h5>
+          </div>
+
+          <div class="row text-center w-100 my-2">
+            <h5 class="text-center w-100" id="temp"></h5>
+          </div>
+
+          <div class="row text-center w-100 my-2">
+            <h5 class="text-center w-100" id="tempMin"></h5>
+          </div>
+
+          <div class="row text-center w-100 my-2">
+            <h5 class="text-center w-100" id="tempMax"></h5>
+          </div>
+
+          <div class="row text-center w-100 my-2">
+            <h5 class="text-center w-100" id="moisture"></h5>
+          </div>
+
+          <div class="row text-center w-100 my-2">
+            <h5 class="text-center w-100" id="windDeg"></h5>
+          </div>
+
+          <div class="row text-center w-100 my-2">
+            <h5 class="text-center w-100" id="windSpeed"></h5>
+          </div>
 
         </div>
       </div>

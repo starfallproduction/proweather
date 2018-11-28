@@ -3,3 +3,4 @@ This is list of all cookie variable created
 
 This is list of all storage variable created
 - weatherDatabase. path: entire site, expire: persist after creation until overwrited
+- weatherDetail. path: entire site, expire: persist after creation untl overwrited
